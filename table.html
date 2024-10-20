@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌤️ Weather Table Page</title>
+    <link rel="stylesheet" href="table.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">Weather App</div>
+        <ul class="menu">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="table.html" class="active">Tables</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="user-profile">
+            <img src="profile-pic.jpeg" alt="User Profile Picture"> 
+        </div>
+        <div class="search-filter">
+            <input type="text" id="cityInput" placeholder="Enter city name." />
+            <button onclick="searchWeather()">Search</button>
+            <div class="filters">
+                <label for="filterDropdown">Filter:</label>
+                <select id="filterDropdown" onchange="handleFilterChange(this.value)">
+        <option value="0">Temp Ascending</option>
+        <option value="1">Temp Descending</option>
+        <option value="2">Highest Temp</option>
+        <option value="3">Rainy Days</option>
+    </select>
+</div>
+<div class="unit-toggle">
+    <label>Celsius</label>
+    <label class="switch">
+        <input type="checkbox" id="unitToggle" onchange="toggleUnits()">
+            <span class="slider round"></span>
+        </label>
+        <label>Fahrenheit</label>
+    </div>
+</div>
+<h1>Weather Forecast Table</h1>
+<div class="table-container">
+    <table id="weatherTable">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temperature</th>
+                <th>Weather Condition</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+<div class="pagination">
+    <button onclick="prevPage()" id="prevBtn">Prev</button>
+    <span id="pageNumber"></span>
+    <button onclick="nextPage()" id="nextBtn">Next</button>
+</div>
+<div class="chatbot-container">
+    <h2>Weather Chatbot</h2>
+    <input type="text" id="chatInput" placeholder="Ask about the weather." />
+    <button onclick="handleChat()">Ask</button>
+    <div id="chatResponse"></div>
+</div>
+    </div>
+    <script src="table.js"></script>
+</body>
+</html>

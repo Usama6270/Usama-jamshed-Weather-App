@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌤️ Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h1>Weather App</h1>
+            <ul>
+                <li><a href="index.html" id="dashboard-link">Dashboard</a></li>
+                <li><a href="table.html" id="tables-link">Tables</a></li>
+            </ul>
+        </nav>
+        <main>
+            <header>
+                <div class="header-content">
+                  <div class="search-section">
+                    <input type="text" id="city-input" placeholder="Search city.">
+                    <button>Search</button>
+                    <div class="switch-container">
+                      <label class="switch">
+                        <input type="checkbox" id="unit-switch">
+                        <span class="slider"></span>
+                      </label>
+                      <span id="unit-label">C/F</span>
+                    </div>
+                  </div>
+                  <div class="header-right">
+                    <div class="user-profile">
+                        <img src="profile-pic.jpeg" alt="User Profile" id="profile-pic">
+                    </div>
+                  </div>            
+                </div>
+              </header>              
+            <section class="weather-info" id="weather-info">
+                <h2>Weather Data for <span id="city-name">City</span></h2>
+                <div class="weather-details">
+                    <div class="weather-icon">
+                        <img id="weather-icon" alt="Weather Icon">
+                    </div>
+                    <div class="weather-stats">
+                        <p>Temperature: <span id="temp"></span>°</p>
+                        <p>Humidity: <span id="humidity"></span>%</p>
+                        <p>Wind Speed: <span id="wind-speed"></span> m/s</p>
+                        <p>Description: <span id="weather-desc"></span></p>
+                    </div>
+                </div>
+            </section>
+            <section class="charts">
+                <div class="chart-container">
+                    <h2 class="chart-title">Bar Chart</h2>
+                    <canvas id="tempBarChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h2 class="chart-title">Line Chart</h2>
+                    <canvas id="tempLineChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h2 class="chart-title">Doughnut Chart</h2>
+                    <canvas id="weatherDoughnutChart"></canvas>
+                </div>
+            </section> 
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
